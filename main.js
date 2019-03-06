@@ -26,6 +26,9 @@ const addDoor = async ({svg, x, y}) => {
 
 (async () => {
   const dungeon = document.getElementById('dungeon')
+  await addDoor({ svg: dungeon, x: 40, y: 61 })
+  await addDoor({ svg: dungeon, x: 80, y: 21 })
+  await addDoor({ svg: dungeon, x: 80, y: 101 })
   await addDoor({ svg: dungeon, x: 100, y: 51 })
   await addDoor({ svg: dungeon, x: 100, y: 71 })
   await addDoor({ svg: dungeon, x: 100, y: 91 })
