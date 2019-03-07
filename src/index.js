@@ -1,47 +1,5 @@
-const wait = async (ms) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms)
-  })
-}
-
-const createPath = () => {
-  return document.createElementNS(
-    'http://www.w3.org/2000/svg',
-    'path'
-  )
-}
-
-const drawHorizontalDoor = async ({svg, x, y}) => {
-  const path = createPath()
-  path.setAttributeNS(null, 'class', 'door')
-  path.setAttributeNS(null, 'd', `
-    M ${x},${y}
-    v -1
-    h 8
-    v 2
-    h -8
-    v -1
-  `)
-
-  svg.appendChild(path)
-  await wait(1000)
-}
-
-const drawVerticalDoor = async ({svg, x, y}) => {
-  const path = createPath()
-  path.setAttributeNS(null, 'class', 'door')
-  path.setAttributeNS(null, 'd', `
-    M ${x},${y}
-    h 1
-    v 8
-    h -2
-    v -8
-    h 1
-  `)
-
-  svg.appendChild(path)
-  await wait(1000)
-}
+import drawHorizontalDoor from '/src/drawers/door-horizontal'
+import drawVerticalDoor from '/src/drawers/door-vertical'
 
 (async () => {
   const dungeon = document.getElementById('dungeon')
