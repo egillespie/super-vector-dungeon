@@ -15,42 +15,6 @@ path {
   animation-fill-mode: forwards;
 }
 
-path.door {
-  fill: #eaeaea;
-}
-
-path.seq-0 { animation-delay: 0s; }
-path.seq-1 { animation-delay: 1s; }
-path.seq-2 { animation-delay: 2s; }
-path.seq-3 { animation-delay: 3s; }
-path.seq-4 { animation-delay: 4s; }
-path.seq-5 { animation-delay: 5s; }
-path.seq-6 { animation-delay: 6s; }
-path.seq-7 { animation-delay: 7s; }
-path.seq-8 { animation-delay: 8s; }
-path.seq-9 { animation-delay: 9s; }
-path.seq-10 { animation-delay: 10s; }
-path.seq-11 { animation-delay: 11s; }
-path.seq-12 { animation-delay: 12s; }
-path.seq-13 { animation-delay: 13s; }
-path.seq-14 { animation-delay: 14s; }
-path.seq-15 { animation-delay: 15s; }
-path.seq-16 { animation-delay: 16s; }
-path.seq-17 { animation-delay: 17s; }
-path.seq-18 { animation-delay: 18s; }
-path.seq-19 { animation-delay: 19s; }
-path.seq-20 { animation-delay: 20s; }
-path.seq-21 { animation-delay: 21s; }
-path.seq-22 { animation-delay: 22s; }
-path.seq-23 { animation-delay: 23s; }
-path.seq-24 { animation-delay: 24s; }
-path.seq-25 { animation-delay: 25s; }
-path.seq-26 { animation-delay: 26s; }
-path.seq-27 { animation-delay: 27s; }
-path.seq-28 { animation-delay: 28s; }
-path.seq-29 { animation-delay: 29s; }
-path.seq-30 { animation-delay: 30s; }
-
 @keyframes draw {
   from {
     opacity: 1;
