@@ -1,12 +1,8 @@
-import createPath from '/src/svg/create-path'
-import waitForPathToDraw from '/src/helpers/wait-for-path-to-draw'
+import drawPath from '/src/drawers/path-single'
 
 export default async ({svg, x, y, length = 10}) => {
-  const path = createPath()
-  path.setAttributeNS(null, 'd', `
+  await drawPath({ svg, d: `
     M ${x},${y}
     h ${length}
-  `)
-  svg.appendChild(path)
-  await waitForPathToDraw()
+  `})
 }
