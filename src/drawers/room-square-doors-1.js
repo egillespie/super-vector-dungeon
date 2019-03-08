@@ -8,7 +8,7 @@ import drawVerticalLine from '/src/drawers/line-vertical'
 //  └─#─┘
 //  4 6 5
 export default async ({svg, x, y}) => {
-  // 1-5 room
+  // 1-5 walls
   await drawVerticalLine({ svg, x, y, length: 30 })
   await drawHorizontalLine({ svg, x, y, length: 30 })
   await drawVerticalLine({ svg, x: x + 30, y, length: 30 })
