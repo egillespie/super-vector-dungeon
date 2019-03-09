@@ -1,2 +1,2 @@
 // Number of milliseconds it takes to draw a path
-export default 1000
+export default 700
