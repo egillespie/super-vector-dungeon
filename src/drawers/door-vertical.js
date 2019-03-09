@@ -5,12 +5,11 @@ export default async ({svg, x, y}) => {
     svg,
     style: 'door',
     d: `
-      M ${x},${y}
-      h 1
+      M ${x-1},${y+8}
+      v -8
+      h 2
       v 8
       h -2
-      v -8
-      h 1
     `
   })
 }
