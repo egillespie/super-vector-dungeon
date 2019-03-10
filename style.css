@@ -1,6 +1,9 @@
 body {
   background-color: #eaeaea;
-  margin: 0;
+}
+
+input[type="button"] {
+  display: block;
 }
 
 path {
