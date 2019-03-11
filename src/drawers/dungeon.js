@@ -1,9 +1,9 @@
-import drawFourCellPrisonHall from './prison-hall-cells-4.js'
-import drawOneDoorRoundRoom from './room-round-doors-1'
-import drawOneDoorSquareRoom from './room-square-doors-1'
-import drawSShapedHallway from './hallway-shape-s'
-import drawTwoDoorRectangleRoom from './room-rectangle-doors-2'
-import drawTwoHallsOneDoorSquareEntrance from './entrance-square-doors-1-halls-2'
+import drawFourCellPrisonHall from '/src/drawers/prison-hall-cells-4'
+import drawOneDoorRoundRoom from '/src/drawers/room-round-doors-1'
+import drawOneDoorSquareRoom from '/src/drawers/room-square-doors-1'
+import drawSShapedHallway from '/src/drawers/hallway-shape-s'
+import drawTwoDoorRectangleRoom from '/src/drawers/room-rectangle-doors-2'
+import drawTwoHallsOneDoorSquareEntrance from '/src/drawers/entrance-square-doors-1-halls-2'
 
 export default async () => {
   const svg = document.getElementById('dungeon')
