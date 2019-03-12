@@ -1,5 +1,5 @@
-import drawHorizontalLine from '/src/drawers/line-horizontal'
-import drawVerticalLine from '/src/drawers/line-vertical'
+import drawHorizontalLine from '/src/stencils/line-horizontal'
+import drawVerticalLine from '/src/stencils/line-vertical'
 
 //      3
 //    ┌───

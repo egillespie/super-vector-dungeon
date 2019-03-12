@@ -1,4 +1,4 @@
-import drawDungeon from '/src/drawers/dungeon'
+import drawDungeon from '/src/stencils/dungeon'
 import initialize from './initialize'
 
 (async () => {

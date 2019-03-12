@@ -1,10 +1,10 @@
-import drawHorizontalLine from '/src/drawers/line-horizontal'
-import drawTopLeftRoundCorner from '/src/drawers/corner-round-top-left'
-import drawTopRightRoundCorner from '/src/drawers/corner-round-top-right'
-import drawBottomRightRoundCorner from '/src/drawers/corner-round-bottom-right'
-import drawBottomLeftRoundCorner from '/src/drawers/corner-round-bottom-left'
-import drawVerticalDoor from '/src/drawers/door-vertical'
-import drawVerticalLine from '/src/drawers/line-vertical'
+import drawHorizontalLine from '/src/stencils/line-horizontal'
+import drawTopLeftRoundCorner from '/src/stencils/corner-round-top-left'
+import drawTopRightRoundCorner from '/src/stencils/corner-round-top-right'
+import drawBottomRightRoundCorner from '/src/stencils/corner-round-bottom-right'
+import drawBottomLeftRoundCorner from '/src/stencils/corner-round-bottom-left'
+import drawVerticalDoor from '/src/stencils/door-vertical'
+import drawVerticalLine from '/src/stencils/line-vertical'
 
 /*
     <path

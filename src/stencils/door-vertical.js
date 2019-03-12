@@ -1,4 +1,4 @@
-import drawPath from '/src/drawers/path-single'
+import drawPath from '/src/stencils/path-single'
 
 export default async ({svg, x, y}) => {
   await drawPath({

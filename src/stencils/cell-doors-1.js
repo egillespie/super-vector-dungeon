@@ -1,6 +1,6 @@
-import drawHorizontalLine from '/src/drawers/line-horizontal'
-import drawVerticalDoor from '/src/drawers/door-vertical'
-import drawVerticalLine from '/src/drawers/line-vertical'
+import drawHorizontalLine from '/src/stencils/line-horizontal'
+import drawVerticalDoor from '/src/stencils/door-vertical'
+import drawVerticalLine from '/src/stencils/line-vertical'
 
 //   1
 //  ───┐
