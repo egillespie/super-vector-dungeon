@@ -14,15 +14,15 @@ import verticalWall from '../walls/wall-vertical'
 // DDD       #
 //  ##########
 //
-// <path d="M 0,0 h 10 v 10 h -10 "/>
-export default ({ x, y }) => {
+// <path d="M 0,0 h 10 M 10,0 v 10 M 0,10 h 10"/>
+export default () => {
   return {
-    x,
-    y,
+    x: 0,
+    y: 0,
     walls: [
-      horizontalWall({ x, y }),
-      verticalWall({ x: x + 10, y }),
-      horizontalWall({ x, y: y + 10 })
+      horizontalWall({ x: 0, y: 0 }),
+      verticalWall({ x: 10, y: 0 }),
+      horizontalWall({ x: 0, y: 10 })
     ]
   }
 }

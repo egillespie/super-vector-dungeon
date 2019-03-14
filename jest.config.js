@@ -11,7 +11,13 @@ module.exports = {
   // The test environment that will be used for testing
   testEnvironment: "node",
 
+  // Shorten the syntax to import modules from /src
   modulePaths: [
     '<rootDir>/src'
-  ]
+  ],
+
+  // Replace /src/ in imports with test-accessible path
+  moduleNameMapper: {
+    '/src/(.*)': '<rootDir>/src/$1'
+  }
 }
