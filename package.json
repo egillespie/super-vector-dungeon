@@ -29,6 +29,8 @@
     "parcel-plugin-eslint": "^1.0.6"
   },
   "dependencies": {
-    "file-saver": "^2.0.1"
+    "file-saver": "^2.0.1",
+    "rng-js": "^1.0.1",
+    "seedrandom": "^3.0.1"
   }
 }
