@@ -2,7 +2,13 @@ input[type="button"] {
   display: inline-block;
 }
 
-path {
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+svg#dungeon path {
   opacity: 0;
   stroke-dasharray: 100%;
   stroke-dashoffset: 0;
@@ -23,6 +29,6 @@ path {
 
 div.paper {
   background-color: snow;
-  border: 1px solid darkgray;
   margin-top: 1rem;
+  position: relative;
 }

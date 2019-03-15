@@ -6,9 +6,9 @@ import drawCommandArrayToString from './draw-command-array-to-string'
 export default (wall) => {
   const path = createPath()
   path.setAttributeNS(null, 'fill', 'none')
-  path.setAttributeNS(null, 'stroke', '#2b2726')
+  path.setAttributeNS(null, 'stroke', wall.color)
   path.setAttributeNS(null, 'stroke-linecap', 'square')
-  path.setAttributeNS(null, 'stroke-width', 1)
+  path.setAttributeNS(null, 'stroke-width', wall.width)
   path.setAttributeNS(null, 'd', drawCommandArrayToString(wall.d))
   return path
 }
