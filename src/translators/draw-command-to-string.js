@@ -6,7 +6,8 @@ const drawCommandTranslators = Object.freeze({
   M, h, v
 })
 
-export default (drawCommandObject) => {
-  const drawCommandToString = drawCommandTranslators[drawCommandObject.command]
-  return drawCommandToString(drawCommandObject)
+export default (drawCommand) => {
+  const command = drawCommand.get('command')
+  const drawCommandToString = drawCommandTranslators[command]
+  return drawCommandToString(drawCommand)
 }

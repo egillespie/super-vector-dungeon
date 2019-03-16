@@ -1,5 +1,7 @@
+import { Map } from 'immutable'
 import v from 'svg/draw-commands/vertical-relative'
 
 test('produces "v y" command', () => {
-  expect(v({ length: 10 })).toEqual('v 10')
+  const drawCommand = Map({ length: 10 })
+  expect(v(drawCommand)).toEqual('v 10')
 })

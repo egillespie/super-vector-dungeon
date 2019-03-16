@@ -1,3 +1,4 @@
+import { fromJS } from 'immutable'
 import horizontalWall from '../walls/wall-horizontal'
 import verticalWall from '../walls/wall-vertical'
 
@@ -16,7 +17,7 @@ import verticalWall from '../walls/wall-vertical'
 //
 // <path d="M 0,0 h 10 M 10,0 v 10 M 0,10 h 10"/>
 export default () => {
-  return Object.freeze({
+  return fromJS({
     x: 0,
     y: 0,
     height: 10,

@@ -1,3 +1,4 @@
+import { fromJS } from 'immutable'
 import wallColor from '/src/constants/wall-color'
 import wallWidth from '/src/constants/wall-width'
 
@@ -13,7 +14,7 @@ export default ({
   color = wallColor,
   width = wallWidth
 }) => {
-  return Object.freeze({
+  return fromJS({
     color,
     width,
     drawCommands: [
