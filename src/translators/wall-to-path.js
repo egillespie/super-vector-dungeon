@@ -9,6 +9,6 @@ export default (wall) => {
   path.setAttributeNS(null, 'stroke', wall.color)
   path.setAttributeNS(null, 'stroke-linecap', 'square')
   path.setAttributeNS(null, 'stroke-width', wall.width)
-  path.setAttributeNS(null, 'd', drawCommandArrayToString(wall.d))
+  path.setAttributeNS(null, 'd', drawCommandArrayToString(wall.drawCommands))
   return path
 }

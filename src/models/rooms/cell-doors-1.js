@@ -16,13 +16,15 @@ import verticalWall from '../walls/wall-vertical'
 //
 // <path d="M 0,0 h 10 M 10,0 v 10 M 0,10 h 10"/>
 export default () => {
-  return {
+  return Object.freeze({
     x: 0,
     y: 0,
+    height: 10,
+    width: 10,
     walls: [
       horizontalWall({ x: 0, y: 0 }),
       verticalWall({ x: 10, y: 0 }),
       horizontalWall({ x: 0, y: 10 })
     ]
-  }
+  })
 }

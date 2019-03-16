@@ -13,12 +13,12 @@ export default ({
   color = wallColor,
   width = wallWidth
 }) => {
-  return {
+  return Object.freeze({
     color,
     width,
-    d: [
+    drawCommands: [
       { command: 'M', x, y },
       { command: 'v', length }
     ]
-  }
+  })
 }
