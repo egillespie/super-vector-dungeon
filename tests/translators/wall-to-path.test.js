@@ -1,7 +1,6 @@
 /**
  * @jest-environment jsdom
  */
-
 import wallToPath from '/src/translators/wall-to-path'
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
