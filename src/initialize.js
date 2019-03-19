@@ -12,6 +12,6 @@ export default () => {
   const seedDungeonButton = document.getElementById('button-seed-dungeon')
   seedDungeonButton.addEventListener('click', seedDungeon)
 
-  const saveSvgButton = document.getElementById('button-save-svg')
-  saveSvgButton.addEventListener('click', downloadSvg)
+  const downloadSvgButton = document.getElementById('button-download-svg')
+  downloadSvgButton.addEventListener('click', downloadSvg)
 }
