@@ -1,14 +1,17 @@
-import createAndDrawDungeon from '/src/user-actions/create-and-draw-dungeon'
+import newDungeon from '/src/user-actions/dungeon-new'
+import seedDungeon from '/src/user-actions/dungeon-seed'
 import downloadSvg from '/src/user-actions/download-svg'
 import drawGrid from '/src/svg/draw-grid'
 
 export default () => {
-  const gridSvg = document.getElementById('grid')
-  drawGrid(gridSvg)
+  drawGrid()
 
   const newDungeonButton = document.getElementById('button-new-dungeon')
-  newDungeonButton.addEventListener('click', () => createAndDrawDungeon('dungeon'))
+  newDungeonButton.addEventListener('click', newDungeon)
+
+  const seedDungeonButton = document.getElementById('button-seed-dungeon')
+  seedDungeonButton.addEventListener('click', seedDungeon)
 
   const saveSvgButton = document.getElementById('button-save-svg')
-  saveSvgButton.addEventListener('click', () => downloadSvg('dungeon'))
+  saveSvgButton.addEventListener('click', downloadSvg)
 }

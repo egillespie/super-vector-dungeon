@@ -3,7 +3,9 @@ import verticalWall from '/src/models/walls/wall-vertical'
 import wallToPath from '/src/translators/wall-to-path'
 import wallWidth from '/src/constants/wall-width'
 
-export default (svg) => {
+export default () => {
+  const svg = document.getElementById('grid')
+
   const color = 'lightblue'
   const viewbox = svg.viewBox.baseVal
 
