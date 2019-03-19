@@ -3,7 +3,7 @@ import rotateRoomCW90AroundOrigin from '/src/transformers/room-rotate-clockwise-
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
 
-test('three-wall rectangular room rotates in place', () => {
+test('three-wall rectangular room rotates around origin', () => {
   const room = fromJS({
     x: 10,
     y: 20,
