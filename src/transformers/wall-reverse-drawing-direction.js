@@ -4,7 +4,7 @@ export default (wall) => {
   const drawCommands = wall.get('drawCommands')
   if (drawCommands.size !== 2) {
     throw new Error(
-      'Cannot rotate wall. ' +
+      'Cannot reverse drawing direction of wall. ' +
       'Expected 2 draw commands and found ' +
       drawCommands.size
     )
@@ -16,21 +16,21 @@ export default (wall) => {
 
   const lineCommand = drawCommands.get(1)
   const command = lineCommand.get('command')
-  let rotatedWall
+  let reversedWall
 
   if (command === 'h') {
-    // M x,y h L  =>  M -y,x v L
+    // M x,y h L  =>  M x+L,y h -L
     const length = lineCommand.get('length')
-    rotatedWall = wall.set('drawCommands', fromJS([
-      { command: 'M', x: -y, y: x },
-      { command: 'v', length }
+    reversedWall = wall.set('drawCommands', fromJS([
+      { command: 'M', x: x + length, y },
+      { command: 'h', length: -length }
     ]))
   } else if (command === 'v') {
-    // M x,y v L  =>  M -y,x h -L
+    // M x,y v L  =>  M x,y+L v -L
     const length = lineCommand.get('length')
-    rotatedWall = wall.set('drawCommands', fromJS([
-      { command: 'M', x: -y, y: x },
-      { command: 'h', length: -length }
+    reversedWall = wall.set('drawCommands', fromJS([
+      { command: 'M', x, y: y + length },
+      { command: 'v', length: -length }
     ]))
   } else {
     throw new Error(
@@ -40,5 +40,5 @@ export default (wall) => {
     )
   }
 
-  return rotatedWall
+  return reversedWall
 }
