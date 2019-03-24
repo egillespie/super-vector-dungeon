@@ -6,7 +6,7 @@ import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
 import translateRoomToPathList from '/src/translators/room-to-path-list'
 
-test('three-wall room translates to three paths', () => {
+test('basic room translates to three paths', () => {
   const room = fromJS({
     walls: [
       horizontalWall({ x: 0, y: 0 }),

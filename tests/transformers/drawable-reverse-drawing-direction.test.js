@@ -1,11 +1,11 @@
-import reverseWallDrawingDirection from '/src/transformers/wall-reverse-drawing-direction'
+import reverseDrawingDirection from '/src/transformers/drawable-reverse-drawing-direction'
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
 
 test('left-to-right wall becomes right-to-left', () => {
   const wall = horizontalWall({ x: 10, y: 0, length: 20 })
 
-  const reversed = reverseWallDrawingDirection(wall)
+  const reversed = reverseDrawingDirection(wall)
   expect(reversed.get('drawCommands').size).toEqual(2)
 
   const moveCommand = reversed.get('drawCommands').get(0)
@@ -21,7 +21,7 @@ test('left-to-right wall becomes right-to-left', () => {
 test('right-to-left wall becomes left-to-right', () => {
   const wall = horizontalWall({ x: 30, y: 0, length: -20 })
 
-  const reversed = reverseWallDrawingDirection(wall)
+  const reversed = reverseDrawingDirection(wall)
   expect(reversed.get('drawCommands').size).toEqual(2)
 
   const moveCommand = reversed.get('drawCommands').get(0)
@@ -37,7 +37,7 @@ test('right-to-left wall becomes left-to-right', () => {
 test('top-to-bottom wall becomes bottom-to-top', () => {
   const wall = verticalWall({ x: 0, y: 10, length: 20 })
 
-  const reversed = reverseWallDrawingDirection(wall)
+  const reversed = reverseDrawingDirection(wall)
   expect(reversed.get('drawCommands').size).toEqual(2)
 
   const moveCommand = reversed.get('drawCommands').get(0)
@@ -53,7 +53,7 @@ test('top-to-bottom wall becomes bottom-to-top', () => {
 test('bottom-to-top wall becomes top-to-bottom', () => {
   const wall = verticalWall({ x: 0, y: 30, length: -20 })
 
-  const reversed = reverseWallDrawingDirection(wall)
+  const reversed = reverseDrawingDirection(wall)
   expect(reversed.get('drawCommands').size).toEqual(2)
 
   const moveCommand = reversed.get('drawCommands').get(0)

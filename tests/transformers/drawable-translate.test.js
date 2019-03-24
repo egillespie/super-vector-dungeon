@@ -1,11 +1,11 @@
 import { fromJS } from 'immutable'
-import translateWall from '/src/transformers/wall-translate'
+import translateDrawable from '/src/transformers/drawable-translate'
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
 
 test('horizontal wall translates horizontally and vertically', () => {
   const wall = horizontalWall({ x: 10, y: 20, length: 50 })
-  const translated = translateWall(wall, -10, -20)
+  const translated = translateDrawable(wall, -10, -20)
   const moveCommand = translated.get('drawCommands').get(0)
   expect(moveCommand.get('x')).toEqual(0)
   expect(moveCommand.get('y')).toEqual(0)
@@ -13,7 +13,7 @@ test('horizontal wall translates horizontally and vertically', () => {
 
 test('vertical wall translates horizontally and vertically', () => {
   const wall = verticalWall({ x: -10, y: -20, length: 50 })
-  const translated = translateWall(wall, 10, 20)
+  const translated = translateDrawable(wall, 10, 20)
   const moveCommand = translated.get('drawCommands').get(0)
   expect(moveCommand.get('x')).toEqual(0)
   expect(moveCommand.get('y')).toEqual(0)
@@ -31,7 +31,7 @@ test('long wall translates horizontally and vertically', () => {
     ]
   })
 
-  const translated = translateWall(wall, -10, -10)
+  const translated = translateDrawable(wall, -10, -10)
   const drawCommands = translated.get('drawCommands')
   expect(drawCommands.get(0).get('command')).toEqual('M')
   expect(drawCommands.get(0).get('x')).toEqual(0)

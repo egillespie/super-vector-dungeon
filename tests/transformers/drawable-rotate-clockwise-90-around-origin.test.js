@@ -1,5 +1,5 @@
 import toBeZero from '../matchers/to-be-zero'
-import rotateWallCW90AroundOrigin from '/src/transformers/wall-rotate-clockwise-90-around-origin'
+import rotateDrawable from '/src/transformers/drawable-rotate-clockwise-90-around-origin'
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
 
@@ -7,7 +7,7 @@ expect.extend({ toBeZero })
 
 test('rotated h wall becomes v wall', () => {
   const originalWall = horizontalWall({ x: 0, y: 0, length: 30 })
-  const rotatedWall = rotateWallCW90AroundOrigin(originalWall)
+  const rotatedWall = rotateDrawable(originalWall)
 
   const drawCommands = rotatedWall.get('drawCommands')
   expect(drawCommands.size).toEqual(2)
@@ -24,7 +24,7 @@ test('rotated h wall becomes v wall', () => {
 
 test('rotated v wall becomes h wall drawn in opposite direction', () => {
   const originalWall = verticalWall({ x: 0, y: 0, length: 30 })
-  const rotatedWall = rotateWallCW90AroundOrigin(originalWall)
+  const rotatedWall = rotateDrawable(originalWall)
 
   const drawCommands = rotatedWall.get('drawCommands')
   expect(drawCommands.size).toEqual(2)
