@@ -1,11 +1,18 @@
+main {
+  margin: 0 auto 1rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
 input[type="button"] {
   display: inline-block;
 }
 
 svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 svg#dungeon path {
@@ -29,6 +36,5 @@ svg#dungeon path {
 
 div.paper {
   background-color: snow;
-  margin-top: 1rem;
-  position: relative;
+  display: grid;
 }

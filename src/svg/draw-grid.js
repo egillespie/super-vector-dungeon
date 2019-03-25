@@ -10,12 +10,8 @@ export default () => {
   const viewbox = svg.viewBox.baseVal
 
   // Vertical grid lines
-  for (
-    var x = viewbox.x, colNum = 0;
-    x <= viewbox.width;
-    x += 10, colNum++
-  ) {
-    const width = colNum % 5 === 0 ? wallWidth : wallWidth * 0.5
+  for (var x = viewbox.x; x <= viewbox.width; x += 10) {
+    const width = x % 50 === 0 ? wallWidth : wallWidth * 0.5
     const line = verticalWall({
       x,
       y: viewbox.y,
@@ -28,12 +24,8 @@ export default () => {
   }
 
   // Horizontal grid lines
-  for (
-    var y = viewbox.y, rowNum = 0;
-    y <= viewbox.height;
-    y += 10, rowNum++
-  ) {
-    const width = rowNum % 5 === 0 ? wallWidth : wallWidth * 0.5
+  for (var y = viewbox.y; y <= viewbox.height; y += 10) {
+    const width = y % 50 === 0 ? wallWidth : wallWidth * 0.5
     const line = horizontalWall({
       x: viewbox.x,
       y,

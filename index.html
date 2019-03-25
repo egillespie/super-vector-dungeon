@@ -8,15 +8,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form>
-    <input id="button-new-dungeon" type="button" value="New Dungeon">
-    <input id="button-seed-dungeon" type="button" value="Seed Dungeon">
-    <input id="button-download-svg" type="button" value="Download SVG">
-  </form>
-  <div class="paper">
-    <svg id="grid" viewbox="-10 -10 200 200" width="360" height="360"></svg>
-    <svg id="dungeon" viewbox="-10 -10 200 200" width="360" height="360"></svg>
-  </div>
+  <main>
+    <form>
+      <input id="button-new-dungeon" type="button" value="New Dungeon">
+      <input id="button-seed-dungeon" type="button" value="Seed Dungeon">
+      <input id="button-download-svg" type="button" value="Download SVG">
+    </form>
+    <div class="paper">
+      <!-- width: 8.5" x 100 + 20, height: 11" x 100 + 20 -->
+      <svg id="grid" viewbox="-10 -10 870 1120" width="1305" height="1680"></svg>
+      <svg id="dungeon" viewbox="-10 -10 870 1120" width="1305" height="1680"></svg>
+    </div>
+  </main>
   <script src="./src/index.js"></script>
 </body>
 </html>
