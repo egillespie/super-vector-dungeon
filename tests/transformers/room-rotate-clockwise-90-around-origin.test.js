@@ -2,6 +2,8 @@ import { fromJS } from 'immutable'
 import rotateRoomCW90AroundOrigin from '/src/transformers/room-rotate-clockwise-90-around-origin'
 import horizontalWall from '/src/models/walls/wall-horizontal'
 import verticalWall from '/src/models/walls/wall-vertical'
+import horizontalDoor from '/src/models/doors/door-horizontal'
+import line from '/src/models/line'
 
 test('three-wall rectangular room rotates around origin', () => {
   const room = fromJS({
@@ -13,6 +15,12 @@ test('three-wall rectangular room rotates around origin', () => {
       horizontalWall({ x: 10, y: 20, length: 60 }),
       verticalWall({ x: 70, y: 20, length: 40 }),
       horizontalWall({ x: 10, y: 60, length: 60 })
+    ],
+    doors: [
+      horizontalDoor({ x: 10, y: 20 })
+    ],
+    exits: [
+      line(10, 20, 20, 20)
     ]
   })
 
@@ -64,4 +72,25 @@ test('three-wall rectangular room rotates around origin', () => {
   const line3 = drawCommands3.get(1)
   expect(line3.get('command')).toEqual('v')
   expect(line3.get('length')).toEqual(60)
+
+  // doors
+  const doors = rotatedRoom.get('doors')
+  expect(doors.get(0).get('drawCommands').get(0).get('command')).toEqual('M')
+  expect(doors.get(0).get('drawCommands').get(0).get('x')).toEqual(-21)
+  expect(doors.get(0).get('drawCommands').get(0).get('y')).toEqual(10)
+  expect(doors.get(0).get('drawCommands').get(1).get('command')).toEqual('h')
+  expect(doors.get(0).get('drawCommands').get(1).get('length')).toEqual(2)
+  expect(doors.get(0).get('drawCommands').get(2).get('command')).toEqual('v')
+  expect(doors.get(0).get('drawCommands').get(2).get('length')).toEqual(8)
+  expect(doors.get(0).get('drawCommands').get(3).get('command')).toEqual('h')
+  expect(doors.get(0).get('drawCommands').get(3).get('length')).toEqual(-2)
+  expect(doors.get(0).get('drawCommands').get(4).get('command')).toEqual('v')
+  expect(doors.get(0).get('drawCommands').get(4).get('length')).toEqual(-8)
+
+  // exits
+  const exits = rotatedRoom.get('exits')
+  expect(exits.get(0).get('a').get('x')).toEqual(-20)
+  expect(exits.get(0).get('a').get('y')).toEqual(10)
+  expect(exits.get(0).get('b').get('x')).toEqual(-20)
+  expect(exits.get(0).get('b').get('y')).toEqual(20)
 })

@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable'
 import horizontalWall from '../walls/wall-horizontal'
 import verticalWall from '../walls/wall-vertical'
+import line from '../line'
 
 // Creates a 10x10 cell with one door starting at (0, 0)
 //
@@ -26,6 +27,9 @@ export default () => {
       horizontalWall({ x: 0, y: 0 }),
       verticalWall({ x: 10, y: 0 }),
       horizontalWall({ x: 0, y: 10 })
+    ],
+    exits: [
+      line(0, 0, 0, 10)
     ]
   })
 }

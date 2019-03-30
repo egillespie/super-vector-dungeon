@@ -1,4 +1,5 @@
 import translateDrawable from './drawable-translate'
+import translateLine from './line-translate'
 
 export default (room, xAmount, yAmount) => {
   return room.withMutations(_room => {
@@ -16,6 +17,14 @@ export default (room, xAmount, yAmount) => {
         door => translateDrawable(door, xAmount, yAmount)
       )
       _room.set('doors', translatedDoors)
+    }
+
+    const exits = room.get('exits')
+    if (exits) {
+      const translatedExits = exits.map(
+        line => translateLine(line, xAmount, yAmount)
+      )
+      _room.set('exits', translatedExits)
     }
   })
 }

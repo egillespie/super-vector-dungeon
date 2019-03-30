@@ -2,6 +2,7 @@ import { fromJS } from 'immutable'
 import verticalDoor from '../doors/door-vertical'
 import horizontalWall from '../walls/wall-horizontal'
 import verticalWall from '../walls/wall-vertical'
+import line from '../line'
 
 //  29 A3
 // 1┌┘ └┐4
@@ -36,6 +37,9 @@ export default () => {
       verticalDoor({ x: 0, y: 17 }),
       verticalDoor({ x: 0, y: 25 }),
       verticalDoor({ x: 30, y: 21 })
+    ],
+    exits: [
+      line(30, 20, 30, 30)
     ]
   })
 }

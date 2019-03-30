@@ -1,4 +1,5 @@
 import rotateDrawable from './drawable-rotate-clockwise-90-around-origin'
+import rotateLine from './line-rotate-clockwise-90-around-origin'
 
 export default (room) => {
   return room.withMutations(_room => {
@@ -15,6 +16,11 @@ export default (room) => {
     const doors = room.get('doors')
     if (doors) {
       _room.set('doors', doors.map(door => rotateDrawable(door)))
+    }
+
+    const exits = room.get('exits')
+    if (exits) {
+      _room.set('exits', exits.map(line => rotateLine(line)))
     }
   })
 }
