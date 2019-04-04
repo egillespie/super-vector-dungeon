@@ -1,4 +1,5 @@
 import rotateDrawable from './drawable-rotate-clockwise-90-around-origin'
+import rotateOrientation from './orientation-rotate-clockwise-90'
 import rotateLine from './line-rotate-clockwise-90-around-origin'
 
 export default (room) => {
@@ -7,6 +8,11 @@ export default (room) => {
     _room.set('y', room.get('x'))
     _room.set('height', room.get('width'))
     _room.set('width', room.get('height'))
+
+    const side = room.get('side')
+    if (side) {
+      _room.set('side', rotateOrientation(side))
+    }
 
     const walls = room.get('walls')
     if (walls) {

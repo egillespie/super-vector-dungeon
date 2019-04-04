@@ -5,19 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Super Vector Dungeon!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/style.scss">
 </head>
 <body>
   <main>
     <form>
-      <input id="button-new-dungeon" type="button" value="New Dungeon">
-      <input id="button-seed-dungeon" type="button" value="Seed Dungeon">
-      <input id="button-download-svg" type="button" value="Download SVG">
+      <div class="row">
+        <label for="input-grid-width">Width:</label>
+        <input id="input-grid-width" type="text" value="85" class="input-number">
+
+        <label for="input-grid-height">Height:</label>
+        <input id="input-grid-height" type="text" value="110" class="input-number">
+
+        <label for="input-grid-scale">Scale:</label>
+        <input id="input-grid-scale" type="text" value="1.5" class="input-number">
+      </div>
+
+      <div class="row">
+        <input id="button-new-dungeon" type="button" value="New Dungeon">
+        <input id="button-seed-dungeon" type="button" value="Seed Dungeon">
+        <input id="button-download-svg" type="button" value="Download SVG">
+      </div>
     </form>
     <div class="paper">
       <!-- width: 8.5" x 100 + 20, height: 11" x 100 + 20 -->
-      <svg id="grid" viewbox="-10 -10 870 1120" width="1305" height="1680"></svg>
-      <svg id="dungeon" viewbox="-10 -10 870 1120" width="1305" height="1680"></svg>
+      <svg id="grid"></svg>
+      <svg id="dungeon"></svg>
     </div>
   </main>
   <script src="./src/index.js"></script>

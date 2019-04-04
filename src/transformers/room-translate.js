@@ -3,6 +3,9 @@ import translateLine from './line-translate'
 
 export default (room, xAmount, yAmount) => {
   return room.withMutations(_room => {
+    _room.set('x', room.get('x') + xAmount)
+    _room.set('y', room.get('y') + yAmount)
+
     const walls = room.get('walls')
     if (walls) {
       const translatedWalls = walls.map(

@@ -30,6 +30,9 @@ test('all parts of room are translated', () => {
 
   const translated = translateRoom(room, -30, -20)
 
+  expect(translated.get('x')).toEqual(-20)
+  expect(translated.get('y')).toEqual(0)
+
   const walls = translated.get('walls')
   expect(walls.get(0).get('drawCommands').get(0).get('x')).toEqual(0)
   expect(walls.get(0).get('drawCommands').get(0).get('y')).toEqual(0)

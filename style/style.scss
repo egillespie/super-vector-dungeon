@@ -1,5 +1,11 @@
+body {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+}
+
 main {
-  margin: 0 auto 1rem;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 form {
@@ -7,7 +13,18 @@ form {
 }
 
 input[type="button"] {
+  background-color: lightgray;
+  border: 1px solid #2b2726;
   display: inline-block;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+input[type="text"] {
+  border: 1px solid #2b2726;
+  margin-right: 0.5rem;
 }
 
 svg {
@@ -23,6 +40,10 @@ svg#dungeon path {
   animation-fill-mode: forwards;
 }
 
+svg#grid {
+  background-color: #fffafa;
+}
+
 @keyframes draw {
   from {
     opacity: 1;
@@ -35,6 +56,14 @@ svg#dungeon path {
 }
 
 div.paper {
-  background-color: snow;
   display: grid;
+  overflow-x: auto;
+}
+
+form .row {
+  margin-bottom: 0.5rem;
+}
+
+input.input-number {
+  width: 2.5rem;
 }

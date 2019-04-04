@@ -1,10 +1,10 @@
 import newDungeon from '/src/user-actions/dungeon-new'
 import seedDungeon from '/src/user-actions/dungeon-seed'
 import downloadSvg from '/src/user-actions/download-svg'
-import drawGrid from '/src/svg/draw-grid'
+import redrawPaper from '/src/svg/redraw-paper'
 
 export default () => {
-  drawGrid()
+  redrawPaper()
 
   const newDungeonButton = document.getElementById('button-new-dungeon')
   newDungeonButton.addEventListener('click', newDungeon)

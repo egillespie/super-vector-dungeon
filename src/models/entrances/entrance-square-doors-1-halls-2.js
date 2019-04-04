@@ -15,6 +15,7 @@ export default () => {
     y: 0,
     height: 50,
     width: 30,
+    side: 'w',
     walls: [
       // 1-8 walls
       verticalWall({ x: 0, y: 10, length: 7 }),
@@ -39,7 +40,9 @@ export default () => {
       verticalDoor({ x: 30, y: 21 })
     ],
     exits: [
-      line(30, 20, 30, 30)
+      line(30, 20, 30, 30),
+      line(10, 0, 20, 0),
+      line(10, 50, 20, 50)
     ]
   })
 }

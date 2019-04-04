@@ -11,6 +11,7 @@ test('three-wall rectangular room rotates around origin', () => {
     y: 20,
     height: 60,
     width: 70,
+    side: 'w',
     walls: [
       horizontalWall({ x: 10, y: 20, length: 60 }),
       verticalWall({ x: 70, y: 20, length: 40 }),
@@ -30,6 +31,7 @@ test('three-wall rectangular room rotates around origin', () => {
   expect(rotatedRoom.get('y')).toEqual(10)
   expect(rotatedRoom.get('height')).toEqual(70)
   expect(rotatedRoom.get('width')).toEqual(60)
+  expect(rotatedRoom.get('side')).toEqual('n')
 
   const rotatedWalls = rotatedRoom.get('walls')
   expect(rotatedWalls.size).toEqual(3)
