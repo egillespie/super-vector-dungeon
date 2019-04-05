@@ -3,9 +3,8 @@ import drawDungeon from '/src/helpers/draw-dungeon'
 import redrawPaper from '/src/svg/redraw-paper'
 
 export default async ({ rngSeed = Date.now() } = {}) => {
-  redrawPaper()
-
-  const dungeon = createDungeon({ rngSeed })
+  const { width, height } = redrawPaper()
+  const dungeon = createDungeon({ rngSeed, width, height })
   const svg = document.getElementById('dungeon')
   await drawDungeon({ svg, dungeon })
 }

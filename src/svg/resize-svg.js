@@ -1,8 +1,7 @@
 export default ({ svg, width, height, scale }) => {
-  // viewbox width is 10 * width + 20 because each square is 10 units
-  // and there is 10 units of padding around the outside
-  const viewboxWidth = 10 * width + 20
-  const viewboxHeight = 10 * height + 20
+  // Add 20 to viewbox dimensions to add 10 units of padding around SVG
+  const viewboxWidth = width + 20
+  const viewboxHeight = height + 20
   const svgWidth = viewboxWidth * scale
   const svgHeight = viewboxHeight * scale
 
