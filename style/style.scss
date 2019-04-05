@@ -1,15 +1,19 @@
 body {
+  background-color: gray;
   font-family: 'EB Garamond', serif;
   font-size: 16px;
 }
 
 main {
-  margin: 0 auto;
   padding: 1rem;
 }
 
 form {
   margin-bottom: 1rem;
+
+  .row {
+    margin-bottom: 0.5rem;
+  }
 }
 
 input[type="button"] {
@@ -25,23 +29,32 @@ input[type="button"] {
 input[type="text"] {
   border: 1px solid #2b2726;
   margin-right: 0.5rem;
+
+  &.input-number {
+    width: 2.5rem;
+  }
+}
+
+div.paper {
+  display: grid;
+  overflow-x: auto;
 }
 
 svg {
   grid-column: 1;
   grid-row: 1;
-}
 
-svg#dungeon path {
-  opacity: 0;
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 0;
-  animation: draw 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-svg#grid {
-  background-color: #fffafa;
+  &#dungeon path {
+    opacity: 0;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+    animation: draw 1s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  &#grid {
+    background-color: #fffafa;
+  }
 }
 
 @keyframes draw {
@@ -53,17 +66,4 @@ svg#grid {
     opacity: 1;
     stroke-dashoffset: 0;
   }
-}
-
-div.paper {
-  display: grid;
-  overflow-x: auto;
-}
-
-form .row {
-  margin-bottom: 0.5rem;
-}
-
-input.input-number {
-  width: 2.5rem;
 }
