@@ -4,7 +4,7 @@ import randomEntrance from '/src/models/entrances/entrance-random'
 
 export default ({ rngSeed, width, height }) => {
   const rng = createRngFromSeed(rngSeed)
-  const entrance = randomEntrance(rng)
+  const entrance = randomEntrance({ rng, width, height })
   return fromJS({
     rng,
     rngSeed,
